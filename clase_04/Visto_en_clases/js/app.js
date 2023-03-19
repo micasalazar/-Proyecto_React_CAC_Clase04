@@ -40,10 +40,39 @@ class Button {
     render(){
         let myApp = document.getElementById(this.parentID);
 
-        myApp.innerHTML = ""; //Vamos a escribir el html para que se dibuje un boton con el texto de this.text
+        const myButtonHTML = myApp.innerHTML + "<button>" + this.text + "</button>";
+
+        myApp.innerHTML = myButtonHTML; //Vamos a escribir el html para que se dibuje un boton con el texto de this.text
     }
 }
 
 //Construir el objeto boton y llamar al metodo render de ese objeto
-//let myButton = new...
-// myButton.metodoQueSea()
+let myButton = new Button ("app", "Login magico..")
+myButton.render();
+
+let myButton2 = new Button ("app", "SingUp");
+myButton2.render();
+
+// Vamos a crear la Class Input
+
+class Input {
+    constructor(parentID,type){
+        this.parentID = parentID;
+        this.type = type;
+    }
+
+    render(){
+        let myApp = document.getElementById(this.parentID);
+
+        const myInputHTML = myApp.innerHTML + "<input  type=" + this.type + ">"  ;
+
+        myApp.innerHTML = myInputHTML; 
+
+    }
+}
+
+let myInput = new Input ("app", "checkbox");
+myInput.render();
+
+let myInput2 = new Input ("app", "date");
+myInput2.render();

@@ -12,21 +12,22 @@ class Button {
 }
 // Creo el Input
 class Input {
-    constructor(parentId, text){
+    constructor(parentId, type){
         this.parentId = parentId;
-        this.text = text;
+        this.type = type;
     }
     render(){
         let myApp = document.getElementById(this.parentId);
-        const myInput = myApp.innerHTML + "<input type='text' value="+this.text+ ">"
+        const myInput = myApp.innerHTML + "<input type="+ this.type + ">"
         myApp.innerHTML=myInput;
     }
 }
 // Se renderiza el boton luego de llamar al html
-let myButton = new Button ("campoVacio", "Esto es un boton");
+                           //completo mi parentID con el id que coloque en mi placeholder 
+let myButton = new Button ("campoVacio", "EL BOTON");
 myButton.render();
 //Se renderiza el input luego de llamar al html
-let myInput = new Input ("campoVacio", "Escriba aqui")
-myInput.render()
+let myInput = new Input ("campoVacio","date");
+myInput.render();
 
  
